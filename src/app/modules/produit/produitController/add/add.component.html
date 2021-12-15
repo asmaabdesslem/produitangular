@@ -1,0 +1,44 @@
+<form [formGroup]="ProductForm"(ngSubmit)="SaveProduct(ProductForm.value)" >
+    <div class="mb-3">
+      <div class="form-group">
+
+      <label for="" class="form-label">code</label>
+      <input formControlName="code" type="number" class="form-control" id="code" >
+      <div *ngIf="code?.errors?.required"  > <span class="help-block" >code  is required.</span> <br>  <br> </div> 
+      <div *ngIf="code?.errors?.pattern"  > <span class="help-block" >code  doit commencer par 619.</span> <br>  <br> </div> 
+    </div>
+
+      <div class="form-group">
+
+      <label for="" class="form-label">Prix</label>     
+      <input formControlName="prix_unitaire" type="number" class="form-control" id="prix_unitaire"  required >
+      <span class="validity"></span>
+
+      <div *ngIf="prix_unitaire?.errors?.required"  > <span class="help-block" >prix  is required.</span> <br>  <br> </div> 
+    </div>
+
+      <div class="form-group">
+
+      <label for="" class="form-label">Name</label>
+      <input formControlName="name" type="text" class="form-control" id="name" required>
+      <span class="validity"></span>
+
+      <div *ngIf="name?.errors?.required"  > <span class="help-block" >name  is required.</span> <br>  <br> </div> 
+    </div>
+
+      <div class="form-group">
+
+      <label for="" class="form-label">Picture</label>
+      <input formControlName="image" type="file" class="form-control" id="image" required>
+      <span class="validity"></span>
+
+      <div *ngIf="image?.errors?.required"  > <span class="help-block" >picture  is required.</span> <br>  <br> </div> 
+    
+    </div>
+
+     </div>
+
+    <button type="submit" class="btn btn-primary"  [disabled]="ProductForm.invalid">Submit</button>
+  
+
+  </form>

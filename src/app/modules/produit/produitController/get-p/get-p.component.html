@@ -1,0 +1,31 @@
+<!--
+<table class="table">
+ 
+    <tbody>
+     
+      <tr *ngFor="let li of ListInvoice let i=index;">
+           <app-get-child [invoice]="li" (notif)="executes($event)"></app-get-child>
+      </tr>
+    </tbody>
+  </table>
+-->
+
+
+ 
+
+
+
+
+<div class="container my-3 w-100" id="about">
+  <input type="text" [(ngModel)]="searchValue" class="form-control" id="search">
+  <div class="row">
+    <div  *ngFor="let li of ListProduit | searchFilter:searchValue  let i=index; " class="col-4 mt-3 border about-section-card huver">
+      <div class="huver">
+        <app-get-c [produit]="li"  (notif)="executes($event)"></app-get-c>
+    </div> 
+
+  </div>
+  </div> 
+
+  </div>
+  

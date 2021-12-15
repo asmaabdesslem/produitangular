@@ -1,0 +1,17 @@
+<form #modelF="ngForm">
+    <label>Id produit </label>
+    <input type="number" class="form-control" name="idProduit" [(ngModel)]="produit.idProduit" #idProduit="ngModel" disabled>
+    
+    <label>code</label>
+    <input type="number" class="form-control" [(ngModel)]="produit.code" #code="ngModel" name="code"  >
+    <label>nom</label>
+    <input type="text" class="form-control" name="name" [(ngModel)]="produit.name" #name="ngModel">
+    <label>prix</label>
+    <input type="number" class="form-control" name="prixUnitaire" [(ngModel)]="produit.prixUnitaire" #prixUnitaire="ngModel">
+    
+    <label> <picture></picture></label>
+    <input  type="file" class="form-control" name="image"  [(ngModel)]="produit.image" #image="ngModel">
+
+    
+    <input type="submit" class="btn btn-primary" value="Update" (click)="Updateproduit(modelF.value)"> 
+</form>
